@@ -70,16 +70,24 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast( array ) {
+  // if the array length = 0, therefore, empty, then
+  // console log the array
+  // return a console log 'undefined'
   if( array.length === 0 ) {
     console.log( array );
     return console.log( undefined );
   } // end if
+  // else, if the array is not empty, 
+  // console log the array 
+  // then find the last item in the array and console log it 
   else{
     console.log( array );
     console.log( 'the last item in the array is:', array[array.length-1] );
     return array[array.length-1];
   } // end else
 } // end getLast
+
+// call function and test with different arrays: 
 getLast( [ 'Paran', 'Dillon', 'Penelope', 'Lumi' ] );
 getLast( [ 'Hannah', 'Stav', 'Floyd', 'Moon' ]);
 getLast( [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]);
@@ -88,9 +96,24 @@ getLast( [] );
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+
+// we create a function called find with the arguments 'value' and 'array'
 function find( value, array ){
-  
-}
+  // create a for loop that looks through the array for the value
+  for( let i = 0; i < array.length; i++ ){
+    // if the array at index of i (NOT formatted as indexOf thankyouverymuch:D ) matches the value
+    if( array[i] === value ){
+      // then return true a console log that says 'value is found in array'
+      return console.log( 'value is found in array:', true );
+    } // end if
+  }// end for
+  // otherwise, return false a console log that says 'value is found in array'
+  return console.log( 'value is found in array', false );
+} // end find
+
+//call the function find
+find( 'Stav', ['Hannah', 'Stav', 'Paran'] );
+
 
 // ----------------------
 // Stretch Goals
