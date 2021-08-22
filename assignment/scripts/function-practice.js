@@ -161,22 +161,51 @@ sumAll( [0, 5, 2, 1, 234] );
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 function allPositive( array ){
+  // create a new array called newPositiveArray
+  // set it's value as an empty array
   let newPositiveArray = [];
-  let noPosNumbs = [];
+  // create a for loop that looks through the array
   for( let i = 0; i<array.length; i++ ){
+    // if a number inside the array is greater than the number 0,
+    // then push that number inside newPositiveArray
     if( array[i] > 0 ){
-    newPositiveArray = [ array[i] ];
-    console.log( newPositiveArray );
+    newPositiveArray.push( array[i] );
     } // end if
-    else{
-      console.log( [noPosNumbs] );
-    }
   } // end for
-  return;
+  // return a log of the newPositiveArray array
+ return console.log( newPositiveArray );
 } // end allPositive
+// call the function and test it!
 
-allPositive( [1, 3, 0, -1] );
+allPositive( [-234, -1, -234, -345] ); // testing with an array of all negative nums
+allPositive( [0, 0, 0, 0] ); // testing with an array of all zero 
+allPositive( [6, 3, -8, -3, -2342356] ); //testing with an array of positive and negative nums
+
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Problem: Create a function that takes two arguments.
+// Both arguments are integers, a and b.
+// Return true if one of them is 10 or if their sum is 10.
+function edabit ( a, b ){
+  // if 'a' equals 10, OR b equals 10, OR the sum of a and b equals 10,
+  if( (a === 10) || ( b === 10) || (a + b === 10) ){
+    // return (via console log) true
+    return console.log( true );
+  } //end if
+  // otherwise...
+  else{
+  // return (via console log) false
+    return console.log( false );
+  } // end else
+}// end edabit
+
+// calling the function to test it with...
+  edabit( 4, 6 );// ...two integers that equal 10
+  edabit( 10, 5 ); //...integer a equaling 10 
+  edabit( 3453245, 10 ); // ...integer b equaling 10
+  edabit( 7, 18 ); //...integers that should not return true
+
+
